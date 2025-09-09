@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký khóa học - HUFLIT</title>
+</head>
+<body>
+    <h1>Đăng ký khóa học - Đại học Ngoại ngữ - Tin học TP.HCM</h1>
+    
+    <form action="#" method="post" enctype="multipart/form-data">
+        
+        <fieldset>
+            <legend>Thông tin cá nhân</legend>
+            
+            <p>
+                <label for="fullname">Họ và tên: <span style="color: red;">*</span></label><br>
+                <input type="text" id="fullname" name="fullname" required placeholder="Vd: Nguyễn Văn An">
+            </p>
+            
+            <p>
+                <label for="email">Email: <span style="color: red;">*</span></label><br>
+                <input type="email" id="email" name="email" required placeholder="Vd: student@huflit.edu.vn">
+            </p>
+            
+            <p>
+                <label for="phone">Số điện thoại:</label><br>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="0123456789">
+                <small>Nhập 10 chữ số</small>
+            </p>
+            
+            <p>
+                <label for="birthday">Ngày sinh:</label><br>
+                <input type="date" id="birthday" name="birthday" min="1990-01-01" max="2010-12-31">
+            </p>
+            
+            <p>
+                <strong>Giới tính:</strong><br>
+                <label><input type="radio" name="gender" value="nam"> Nam</label>
+                <label><input type="radio" name="gender" value="nu"> Nữ</label>
+                <label><input type="radio" name="gender" value="khac"> Khác</label>
+            </p>
+            
+            <p>
+                <label for="address">Địa chỉ:</label><br>
+                <textarea id="address" name="address" rows="3" cols="50" placeholder="Nhập địa chỉ đầy đủ"></textarea>
+            </p>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Thông tin khóa học</legend>
+            
+            <p>
+                <label for="course">Khóa học: <span style="color: red;">*</span></label><br>
+                <select id="course" name="course" required>
+                    <option value="">-- Chọn khóa học --</option>
+                    <option value="cntt">Công nghệ thông tin</option>
+                    <option value="anh">Ngôn ngữ Anh</option>
+                    <option value="nhat">Ngôn ngữ Nhật</option>
+                    <option value="qtkd">Quản trị kinh doanh</option>
+                    <option value="ketoan">Kế toán</option>
+                </select>
+            </p>
+            
+            <p>
+                <strong>Kỹ năng hiện tại:</strong><br>
+                <label><input type="checkbox" name="skills" value="html"> HTML</label><br>
+                <label><input type="checkbox" name="skills" value="css"> CSS</label><br>
+                <label><input type="checkbox" name="skills" value="javascript"> JavaScript</label><br>
+                <label><input type="checkbox" name="skills" value="database"> Database</label><br>
+                <label><input type="checkbox" name="skills" value="none"> Chưa có kinh nghiệm</label>
+            </p>
+            
+            <p>
+                <label for="experience">Kinh nghiệm lập trình (năm): <span id="exp-value">0</span></label><br>
+                <input type="range" id="experience" name="experience" min="0" max="10" value="0" 
+                       oninput="document.getElementById('exp-value').textContent = this.value">
+            </p>
+            
+            <p>
+                <label for="cv">Upload CV:</label><br>
+                <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
+                <small>Chấp nhận file PDF, DOC, DOCX (tối đa 5MB)</small>
+            </p>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Thông tin bổ sung</legend>
+            
+            <p>
+                <label for="color">Màu sắc yêu thích:</label><br>
+                <input type="color" id="color" name="color" value="#0066cc">
+            </p>
+            
+            <p>
+                <label for="city">Thành phố:</label><br>
+                <input type="search" id="city" name="city" list="cities" placeholder="Tìm kiếm thành phố">
+                <datalist id="cities">
+                    <option value="Hồ Chí Minh">
+                    <option value="Hà Nội">
+                    <option value="Đà Nẵng">
+                    <option value="Cần Thơ">
+                    <option value="Hải Phòng">
+                    <option value="Nha Trang">
+                    <option value="Huế">
+                    <option value="Vũng Tàu">
+                </datalist>
+            </p>
+            
+            <p>
+                <label for="fee">Học phí mong muốn (VNĐ):</label><br>
+                <input type="number" id="fee" name="fee" min="1000000" max="50000000" step="100000" placeholder="15000000">
+                <small>Từ 1 triệu đến 50 triệu VNĐ</small>
+            </p>
+            
+            <p>
+                <label for="time">Thời gian học mong muốn:</label><br>
+                <input type="time" id="time" name="time">
+            </p>
+            
+            <p>
+                <label for="comments">Ghi chú thêm:</label><br>
+                <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Nhập ghi chú hoặc yêu cầu đặc biệt"></textarea>
+            </p>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Hoàn tất đăng ký</legend>
+            
+            <p>
+                <label>
+                    <input type="checkbox" name="agree" value="yes" required>
+                    Tôi đồng ý với <a href="#" target="_blank">điều khoản và điều kiện</a> của HUFLIT
+                </label>
+            </p>
+            
+            <p>
+                <label>
+                    <input type="checkbox" name="newsletter" value="yes">
+                    Nhận thông tin khóa học mới qua email
+                </label>
+            </p>
+            
+            <p>
+                <input type="hidden" name="source" value="website">
+                <input type="hidden" name="timestamp" value="2025-09-08">
+                
+                <input type="submit" value="Đăng ký khóa học" style="background: #0066cc; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+                <input type="reset" value="Xóa form" style="background: #666; color: white; padding: 10px 20px; border: none; border-radius: 5px; margin-left: 10px;">
+            </p>
+        </fieldset>
+        
+    </form>
+    
+    <footer>
+        <p><small>Copyright © 2025 - Đại học Ngoại ngữ - Tin học TP.HCM (HUFLIT)</small></p>
+        <p><small>Hotline hỗ trợ: 028 3868 3311 | Email: info@huflit.edu.vn</small></p>
+    </footer>
+</body>
+</html>
